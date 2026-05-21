@@ -1,52 +1,109 @@
-# Shivam Kumar Mishra — Portfolio
+# SKM-Portfolio
+# 🚀 Shivam Kumar Mishra — Portfolio
 
-Personal portfolio (React + Vite + Tailwind) showcasing AI/ML projects, experience, skills, and contact.
+<div align="center">
 
-Live stack: cinematic UI, command palette, portfolio PDF export, and optional AI assistant via a local proxy.
+<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=600&size=28&duration=3000&pause=1000&color=2563EB&center=true&vCenter=true&width=700&lines=AI+Engineer;Machine+Learning+Developer;Building+Intelligent+Systems;LLMs+%7C+RAG+%7C+AI+Agents;Full-Stack+AI+Applications" />
 
-## Setup
+<br/>
 
-```bash
-npm install
-npm run dev
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0F19,100:2563EB&height=180&section=header&text=Shivam%20Kumar%20Mishra&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=35" />
+
+### Building Scalable AI Systems & Modern Intelligent Applications
+
+</div>
+
+---
+
+## ✨ About
+
+AI Engineer focused on developing intelligent systems, scalable backend architectures, and production-grade AI applications.
+
+Passionate about:
+
+* Large Language Models (LLMs)
+* Retrieval-Augmented Generation (RAG)
+* AI Agents
+* Full-Stack AI Systems
+* Backend Infrastructure
+
+This portfolio showcases modern engineering projects, AI workflows, and scalable application development with a strong focus on clean architecture and real-world impact.
+
+---
+
+## ⚡ Tech Stack
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,react,nextjs,ts,tailwind,nodejs,fastapi,postgresql,docker,git,linux" />
+
+</div>
+
+---
+
+## 🚀 Engineering Focus
+
+<div align="center">
+
+| Domain          | Technologies                     |
+| --------------- | -------------------------------- |
+| AI/ML           | PyTorch, TensorFlow, OpenAI APIs |
+| LLM Engineering | LangChain, RAG, Vector DBs       |
+| Frontend        | React, Next.js, Tailwind         |
+| Backend         | FastAPI, Node.js, PostgreSQL     |
+| DevOps          | Docker, GitHub, Vercel           |
+
+</div>
+
+---
+
+## 🧠 Current Interests
+
+```txt id="q6pjlp"
+• AI Agents & Autonomous Systems
+• Retrieval-Augmented Generation (RAG)
+• LLM Application Development
+• Full-Stack AI Products
+• Scalable Backend Systems
+• Intelligent Automation
 ```
 
-## Environment variables
+---
 
-**Do not commit API keys.** Use local env files only (already gitignored).
+## 🌐 Portfolio Highlights
 
-| File | Purpose |
-|------|---------|
-| `.env` | Frontend — copy from [`.env.example`](.env.example) (EmailJS, optional) |
-| `server/.env` | Backend proxy — copy from [`server/.env.example`](server/.env.example) (OpenAI, optional) |
+* Premium Modern UI/UX
+* AI Assistant Integration
+* Interactive Project Showcase
+* Recruiter-Focused Design
+* Downloadable Portfolio PDF
+* Contact & Query System
+* LinkedIn Integration
+* Smooth Motion & Animations
+* Responsive Across Devices
 
-```bash
-cp .env.example .env
-cp server/.env.example server/.env
-# Edit both files with your keys locally — never push .env to GitHub
-```
+---
 
-Optional assistant proxy:
+## 📫 Connect With Me
 
-```bash
-npm run start:server
-```
+<div align="center">
 
-## Scripts
+<a href="https://www.linkedin.com/in/shivam-kumar-mishra-a68a92288">
+  <img src="https://skillicons.dev/icons?i=linkedin" />
+</a>
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Vite dev server |
-| `npm run build` | Production build |
-| `npm run preview` | Preview production build |
-| `npm run start:server` | Express assistant proxy (`/api/assistant`) |
+<a href="https://github.com/YOUR_USERNAME">
+  <img src="https://skillicons.dev/icons?i=github" />
+</a>
 
-## Security
+</div>
 
-- Secrets live only in `.env` / `server/.env` (gitignored).
-- OpenAI calls go through `server/index.js` so keys are not exposed in the client bundle.
-- Contact form uses EmailJS public key via `VITE_*` vars or falls back to `mailto:`.
+---
 
-## License
+<div align="center">
 
-MIT
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:0B0F19&height=120&section=footer" />
+
+### Designed & Engineered by Shivam Kumar Mishra ⚡
+
+</div>
