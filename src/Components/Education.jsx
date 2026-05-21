@@ -1,44 +1,53 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import { profile } from '../Data/profile';
+import SectionHeader from './SectionHeader';
 
-const Education = () => {
-  const educationDetails = [
-    {
-      logo: "logo-arrow",
-      degree: 'Bachelor of Technology in Computer Science and Engineering(CSE)',
-      institution: 'Maharaja Agrasen Istitute of Technology',
-      year: ' [2023-207]',
-      desc: "I am 2nd year student currently pursuing a Bachelor's degree in CSE at MAIT ",
-    },
-    {
-      logo: "logo-play",
-      degree: 'BBPS-MV(XII)-CBSE',
-      institution: 'Bal Bhavan Public School',
-      year: ' [2023]',
-      desc: "I completed my class 12 high school education at Bal Bhavan  Public School, Delhi, where I studied Science with PCM.",       
-    },
-  ];
+const Education = () => (
+  <section id="education" className="px-4 py-24 text-white md:px-6">
+    <div className="mx-auto max-w-7xl">
+      <SectionHeader
+        eyebrow="Academic foundation"
+        title="Computer science depth with modern AI coursework."
+        description="Formal foundations across machine learning, security, mathematics, quantum computing, and responsible AI."
+      />
 
-  return (
-    <section id='education' className="container mx-auto px-4 py-12">
-      <h3 className="text-4xl text-center font-semibold mb-1">
-          My <span className="text-cyan-600">Education</span>
-        </h3>
-      <p className="text-lg text-center font-normal ">My educational details are as follows.</p>
-      <hr className="border-gray-300 w-full mb-8" />
-      <div>
-        {educationDetails.map((edu, index) => (
-          <div key={index} className="bg-gray-200 rounded-lg shadow-md p-6 flex flex-col items-start mb-4">
-            <div className="text-lg font-medium mb-2 text-gray-700">{edu.degree}</div>
-            <div className="flex-1">
-              <div className="text-base text-gray-500">{edu.institution}</div>
-              <div className="text-base text-gray-500">{edu.year}</div>
-            </div>
-            <p className="text-gray-700">{edu.desc}</p>
+      <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-4">
+          {profile.education.map((edu, index) => (
+            <motion.article
+              key={edu.school}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.06 }}
+              className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl"
+            >
+              <p className="text-sm font-medium accent">{edu.period || edu.location}</p>
+              <h3 className="mt-2 text-xl font-semibold text-white">{edu.degree}</h3>
+              <p className="mt-2 text-sm text-slate-400">{edu.school}</p>
+              <p className="mt-3 text-sm text-slate-300">{edu.details}</p>
+            </motion.article>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="rounded-[1.5rem] card p-5"
+        >
+          <h3 className="text-xl font-semibold text-white">Relevant coursework</h3>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {profile.coursework.map((item) => (
+              <span key={item} className="rounded-full border border-white/10 bg-slate-950/45 px-3 py-1.5 text-sm muted">
+                {item}
+              </span>
+            ))}
           </div>
-        ))}
+        </motion.div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Education;

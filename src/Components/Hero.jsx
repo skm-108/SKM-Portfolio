@@ -1,65 +1,85 @@
-import TypeWritingEffect from './TypeWritingEffect';
+import { motion, useReducedMotion } from 'framer-motion';
+import { profile } from '../Data/profile';
+import portrait from '../assets/photo_2026-05-21_10-10-20.jpg';
+import PortfolioPdfButton from './PortfolioPdfButton';
+import SectionReveal from './SectionReveal';
+
+const metrics = [
+  ['9.1', 'CGPA'],
+  ['60%', 'anomaly reduction (DRDO)'],
+  ['25%', 'spam detection lift'],
+  ['Top 700', 'Agentic AI hackathon']
+];
 
 const Hero = () => {
-  const socialMediaLinks = [
-    'https://github.com/kavyakapoor420',
-    'https://www.linkedin.com/in/kavyakapoor420', // Corrected LinkedIn link
-    'https://leetcode.com/u/kavyakapoor/'
-  ];
-
-  const socialMediaImages = [
-    'https://cdn-icons-png.flaticon.com/512/25/25231.png', // GitHub logo
-    'https://cdn-icons-png.flaticon.com/512/174/174857.png', // LinkedIn logo
-    'https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png' // LeetCode logo
-  ];
+  const prefersReducedMotion = useReducedMotion();
 
   return (
-    <div id="home">
-      <div className="relative min-h-screen">
-        <div className="container mx-auto px-4 h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
-            {/* Left side */}
-            <div className="flex flex-col justify-center pt-32 lg:pt-40 ml-20 mb-20">
-              <h1 className="md:text-5xl text-2xl md:leading-normal leading-10 text-white font-bold">
-                <span className="text-cyan-600 md:text-6xl text-5xl">Hello!<br /></span>
-                My Name is <span className="text-red-500">Kavya Kapoor</span>
-              </h1>
-              <h3 className="text-4xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
-                <TypeWritingEffect />
-              </h3>
-              <p className="text-xl text-cyan-600 mb-8 leading-relaxed max-w-lg">
-                I am a passionate web developer with strong problem-solving skills and proficient in Backend Development.
-                Currently pursuing B.Tech in Computer Science (2nd Year). 
-                Skilled in C/C++, JavaScript, React.js, Node.js, and MongoDB.
-              </p>
-              <div className="flex flex-wrap">
-                <div className="flex gap-4">
-                  {socialMediaLinks.map((link, indx) => (
-                    <a 
-                      key={link} 
-                      href={link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="cursor-pointer"
-                    >
-                      <img 
-                        src={socialMediaImages[indx]} 
-                        alt="Social Media" 
-                        className="w-10 p-1 h-10  bg-white rounded-full"
-                      />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* Right side */}
-            <div className="relative h-[600px] lg:h-screen mr-10">
-              <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></spline-viewer>
-            </div>
+    <section id="home" className="relative flex min-h-screen items-center px-4 pb-16 pt-24 md:px-6 md:pt-28">
+      <div className="mx-auto grid w-full max-w-5xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <SectionReveal>
+          <p className="mb-3 text-sm text-slate-500">{profile.name}</p>
+          <motion.h1
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="text-3xl font-semibold leading-[1.12] tracking-tight text-white md:text-5xl"
+          >
+            AI and security engineering for production systems.
+          </motion.h1>
+
+          <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-400">
+            {profile.tagline}
+          </p>
+          <p className="mt-2 text-sm text-slate-500">{profile.title}</p>
+
+          <div className="mt-8 flex flex-wrap gap-2">
+            <a href="#projects" className="btn-primary">
+              View projects
+            </a>
+            <PortfolioPdfButton className="btn-ghost" />
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost"
+            >
+              GitHub
+            </a>
           </div>
-        </div>
+
+          <div className="mt-10 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {metrics.map(([value, label]) => (
+              <div
+                key={label}
+                className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5"
+              >
+                <p className="text-base font-semibold text-white">{value}</p>
+                <p className="mt-0.5 text-[0.65rem] leading-snug text-slate-500">{label}</p>
+              </div>
+            ))}
+          </div>
+        </SectionReveal>
+
+        <SectionReveal delay={0.08} className="mx-auto w-full max-w-sm lg:max-w-none">
+          <motion.div
+            className="overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.02] p-1"
+            whileHover={prefersReducedMotion ? undefined : { y: -2 }}
+            transition={{ duration: 0.2 }}
+          >
+            <img
+              src={portrait}
+              alt={profile.name}
+              className="aspect-[4/5] w-full rounded-[0.65rem] object-cover"
+            />
+            <div className="flex items-center justify-between px-3 py-2.5 text-xs">
+              <span className="font-medium text-slate-300">{profile.location}</span>
+              <span className="text-slate-500">Open to roles</span>
+            </div>
+          </motion.div>
+        </SectionReveal>
       </div>
-     </div>
+    </section>
   );
 };
 

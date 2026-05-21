@@ -5,13 +5,20 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start:server": "node server/index.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "framer-motion": "^12.39.0",
     "hamburger-react": "^2.5.2",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
+    "node-fetch": "^3.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "swiper": "^11.2.2",

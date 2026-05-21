@@ -1,52 +1,44 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
+import { profile } from '../Data/profile';
+import SectionHeader from './SectionHeader';
+import SectionReveal from './SectionReveal';
 
+const About = () => (
+  <section id="about" className="relative px-4 py-24 text-white md:px-6">
+    <div className="mx-auto max-w-3xl">
+      <SectionHeader
+        eyebrow="About"
+        title="Engineering AI systems with production discipline."
+        description="Undergraduate CS at MAIT (9.1 CGPA). I work on retrieval pipelines, applied ML, and secure architecture — with clear metrics and maintainable code."
+      />
 
-const About = () => {
+      <SectionReveal>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-6 md:p-8"
+        >
+          <p className="text-sm text-slate-500">{profile.title}</p>
+          <p className="mt-4 text-base leading-[1.75] text-slate-300">{profile.summary}</p>
 
-    useEffect(() => {
-            AOS.init();
-        }, [])
-    
-  return (
-    <>
+          <div className="section-divider my-8" />
 
-       <section id='about' name='about' className='w-full h-screen bg-[#0a192f] text-gray-300 font-sans'>
-            <div className='flex flex-col justify-center items-center w-full h-full'>
-                <div className='max-w-[100px] w-full px-4 grid grid-cols-2 gap-8'>
-                    <div className='sm:text-right pb-8'>
-                        <p className='text-4xl font-bold inline border-b-8 border-[#C23B22]'>About</p>
-                    </div>
+          <h3 className="text-sm font-medium text-white">Selected outcomes</h3>
+          <ul className="mt-4 space-y-3">
+            {profile.highlights.map((highlight) => (
+              <li
+                key={highlight}
+                className="relative pl-4 text-sm leading-relaxed text-slate-400 before:absolute before:left-0 before:top-[0.55em] before:h-1 before:w-1 before:rounded-full before:bg-slate-500"
+              >
+                {highlight}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </SectionReveal>
+    </div>
+  </section>
+);
 
-                    <div>
-
-                    </div>
-
-                </div>
-
-                <div className='max-w-[1000px] w-full px-4 grid sm:grid-cols-2 gap-8'>
-                    <div className='sm:text-right text-4xl font-bold' data-aos='fade-right' data-aos-duration='1000'>
-                        <p>Hi,  I am <span className='text-[#C23B22]'>KAVYA</span> Please take a look of my Projects,Or Read My Blogs <span className='text-[#C23B22]'></span>.</p>
-                    </div>
-                    <div data-aos='fade-up' data-aos-duration='1000'>
-                        <p>
-                            I am 2nd year student pursuing my btech in CSE .
-                            I am a passionate Backend javascript developer with strong problem-solving skills and proficient in Nodejs and expressJs .
-                            I try to learn new things in tech everyday and i m very hardworking,dedicated person
-                            I am Skilled in C/C++, JavaScript, React.js, Node.js, and MongoDB. and made some projects using MERN stack
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </>
-		
-  )
-}
-
-export default About
+export default About;

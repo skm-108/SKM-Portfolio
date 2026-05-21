@@ -1,0 +1,42 @@
+{
+  "source": "manual-fallback",
+  "profileUrl": "https://www.linkedin.com/in/shivam-kumar-mishra-a68a92288",
+  "name": "Shivam Kumar Mishra",
+  "headline": "AI/ML and Cybersecurity Engineer | RAG Systems | Secure AI Products | Full-Stack Builder",
+  "location": "New Delhi, India",
+  "profileImage": "/profile-linkedin.svg",
+  "about": "Computer Science undergraduate building practical AI systems across retrieval, video intelligence, cybersecurity, and full-stack product engineering.",
+  "featuredPosts": [
+    {
+      "title": "Building practical RAG systems that answer with context",
+      "date": "2026",
+      "type": "LinkedIn post placeholder",
+      "summary": "Notes on turning long PDFs and document collections into searchable, grounded question-answering systems with LangChain, ChromaDB, and Gemini.",
+      "tags": ["RAG", "LangChain", "Gemini", "Vector DB"],
+      "url": "https://www.linkedin.com/in/shivam-kumar-mishra-a68a92288"
+    },
+    {
+      "title": "From video to decisions: AI meeting intelligence",
+      "date": "2026",
+      "type": "Project reflection",
+      "summary": "A product note on Clip Mind, an AI assistant that converts videos and meetings into transcripts, summaries, decisions, action items, and transcript chat.",
+      "tags": ["Video AI", "Whisper", "Mistral", "RAG"],
+      "url": "https://www.linkedin.com/in/shivam-kumar-mishra-a68a92288"
+    },
+    {
+      "title": "Security as a core layer for AI products",
+      "date": "2025",
+      "type": "Experience insight",
+      "summary": "Lessons from anomaly detection, VAPT, network traffic analysis, and secure architecture work across DRDO and IWAI experiences.",
+      "tags": ["Cybersecurity", "Anomaly Detection", "VAPT", "ML"],
+      "url": "https://www.linkedin.com/in/shivam-kumar-mishra-a68a92288"
+    }
+  ],
+  "socialProof": [
+    "AI for Humanity 2024 Finalist",
+    "Google Cloud Agentic AI Hackathon Top 700 of 9,100+ teams",
+    "Smart India Hackathon 2024 Semi-Finalist",
+    "Open Source Mentor at Google Developer Group, MAIT",
+    "DRDO Cybersecurity and Machine Learning Intern"
+  ]
+}

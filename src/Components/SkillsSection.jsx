@@ -1,91 +1,75 @@
-import { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { profile } from '../Data/profile';
+import SectionHeader from './SectionHeader';
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+const SkillsSection = () => (
+  <section id="skills" className="px-4 py-24 text-white md:px-6">
+    <div className="mx-auto max-w-5xl">
+      <SectionHeader
+        eyebrow="Skills"
+        title="Technical scope."
+        description="Applied across retrieval systems, ML pipelines, security reviews, and shipped interfaces."
+      />
 
-
-import HTML from '../assets/html.png'
-import CSS from '../assets/css.png';
-import TailwindLogo from '../assets/tailwind.png';
-import JavaScript from '../assets/javascript.png';
-import ReactLogo from '../assets/react.png';
-import GithubLogo from '../assets/github.png';
-import NodeJsLogo from '../assets/node.png';
-
-const SkillsSection = () => {
-
-    useEffect(() => {
-        AOS.init();
-    }, [])
-
-  return (
-    <div >
-        <section id='skills' name='skills' className='w-full h-screen text-gray-300 bg-[#0a192f] font-sans'>
-            <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-                <div>
-                    <p className='text-4xl font-bold inline border-b-4 border-[#C23B22]'>Skills</p>
-
-                </div>
-
-                <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8 my-4'>
-                    <div className='shadow-2xl shadow-[#040c16] hover:scale-110 duration-300 rounded-md'>
-                        <div data-aos='zoom-in-up' data-aos-duration='1000'>
-                            <img src={HTML} className='w-20 mx-auto' alt="html icon" />
-                            <p className='my-4'>HTML</p>
-                        </div>
-                    </div>
-
-                    <div className='shadow-2xl shadow-[#040c16] hover:scale-110 duration-300 rounded-md'>
-                        <div data-aos='zoom-in-up' data-aos-duration='1500'>
-                            <img src={CSS} className='w-20 mx-auto' alt="css icon" />
-                            <p className='my-4'>CSS</p>
-                        </div>
-                    </div>
-
-                    <div className='shadow-2xl shadow-[#040c16] hover:scale-110 duration-300 rounded-md'>
-                        <div data-aos='zoom-in-up' data-aos-duration='2000'>
-                            <img src={JavaScript} className='w-20 mx-auto' alt="javascript icon" />
-                            <p className='my-4'>JavaScript</p>
-                        </div>
-                    </div>
-
-                    <div className='shadow-2xl shadow-[#040c16] hover:scale-110 duration-300 rounded-md'>
-                        <div data-aos='zoom-in-up' data-aos-duration='2500'>
-
-                            <img src={ReactLogo} className='w-20 mx-auto' alt="react icon" />
-                            <p className='my-4'>ReactJs</p>
-                        </div>
-                    </div>
-
-                    <div className='shadow-2xl shadow-[#040c16] hover:scale-110 duration-300 rounded-md'>
-                        <div data-aos='zoom-in-up' data-aos-duration='3000'>
-                            <img src={GithubLogo} className='w-20 mx-auto' alt="github icon" />
-                            <p className='my-4'>Github</p>
-                        </div>
-                    </div>
-
-                    <div className='shadow-2xl shadow-[#040c16] hover:scale-110 duration-300 rounded-md'>
-                        <div data-aos='zoom-in-up' data-aos-duration='4000'>
-
-                            <img src={TailwindLogo} className='w-20 mx-auto' alt="tailwind icon" />
-                            <p className='my-4'>Tailwind CSS</p>
-                        </div>
-                    </div>
-
-                    <div className='shadow-2xl shadow-[#040c16] hover:scale-110 duration-300 rounded-md'>
-                        <div data-aos='zoom-in-up' data-aos-duration='4500'>
-
-                            <img src={NodeJsLogo} className='w-20 mx-auto' alt="nodejs icon" />
-                            <p className='my-4'>Nodejs</p>
-                        </div>
-                    </div>
-                </div>
-
-
+      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+        {profile.skillGroups.map((group, index) => (
+          <motion.article
+            key={group.title}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.35, delay: index * 0.04 }}
+            className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-5"
+          >
+            <h3 className="text-sm font-semibold text-white">{group.title}</h3>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {group.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-md border border-white/[0.08] px-2 py-0.5 text-xs text-slate-500"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
-        </section>
-    </div>
-  )
-}
+          </motion.article>
+        ))}
+      </div>
 
-export default SkillsSection
+      <div className="mt-5 grid gap-4 lg:grid-cols-2">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-5"
+        >
+          <h3 className="text-sm font-semibold text-white">Certifications</h3>
+          <ul className="mt-3 space-y-2">
+            {profile.certifications.map((item) => (
+              <li key={item} className="text-sm leading-relaxed text-slate-400">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-5"
+        >
+          <h3 className="text-sm font-semibold text-white">Recognition</h3>
+          <ul className="mt-3 space-y-2">
+            {profile.achievements.map((item) => (
+              <li key={item} className="text-sm leading-relaxed text-slate-400">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
+export default SkillsSection;

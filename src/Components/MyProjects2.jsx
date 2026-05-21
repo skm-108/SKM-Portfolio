@@ -19,7 +19,7 @@ const MyProjects = () => {
     <section id="projects" className="py-20 text-white">
       <div className="text-center">
         <h3 className="text-4xl font-semibold">
-          My <span className="text-cyan-600">Practice Projects</span>
+          My <span className="accent">Practice Projects</span>
         </h3>
         <br />
         <div className="flex max-w-6xl gap-6 px-5 mx-auto items-center relative">
@@ -48,13 +48,13 @@ const MyProjects = () => {
       >
         {projects.map((project_info, indx) => (
           <SwiperSlide key={indx} className="text-white">
-            <div className="h-fit w-full p-4 bg-slate-300 rounded-xl shadow-lg relative group">
+            <div className="h-fit w-full p-4 card relative group">
               <img
                 src={project_info.img}
                 alt="project_image"
                 className="rounded-lg w-full"
               />
-              <h3 className="p-2 text-center text-red-500 text-2xl">
+              <h3 className="p-2 text-center muted text-2xl">
                 {project_info.name}
               </h3>
 
@@ -62,7 +62,7 @@ const MyProjects = () => {
               <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                 <button
                   onClick={() => handleShowCard(project_info)}
-                  className="text-white bg-cyan-600 px-4 py-2 rounded-md"
+                  className="text-white btn-accent px-4 py-2 rounded-md"
                 >
                   See Details
                 </button>
@@ -73,7 +73,7 @@ const MyProjects = () => {
                   href={project_info.github_link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-xl text-cyan-600 bg-gray-700 px-4 py-2 inline-block"
+                  className="rounded-xl accent bg-gray-700 px-4 py-2 inline-block"
                 >
                   View Code on GitHub
                 </a>
@@ -81,7 +81,7 @@ const MyProjects = () => {
                   href={project_info.live_link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cyan-600 rounded-md bg-gray-800 px-4 py-2 inline-block"
+                  className="accent rounded-md bg-gray-800 px-4 py-2 inline-block"
                 >
                   See Live
                 </a>
@@ -145,7 +145,7 @@ const MyProjects = () => {
                 href={activeProject.live_link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white bg-cyan-600 px-6 py-2 rounded-md inline-block"
+                className="text-white btn-accent px-6 py-2 rounded-md inline-block"
               >
                 View Live
               </a>

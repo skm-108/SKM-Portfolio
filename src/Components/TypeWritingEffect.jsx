@@ -7,9 +7,10 @@ const TypeWritingEffect = () => {
         <Typewriter
           options={{
             strings:[
-                "Backend Developer",
-                "ReactJs Developer",
-                "Problem Solver"
+                "AI/ML Engineer",
+                "RAG Systems Builder",
+                "Cybersecurity Analyst",
+                "Full-Stack Technocrat"
             ],
             autoStart:true,
             loop:true,
