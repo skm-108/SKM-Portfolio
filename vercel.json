@@ -6,8 +6,7 @@
       "use": "@vercel/static-build",
       "config": { "distDir": "dist" }
     }
-  ],
-  "plugins": ["vercel/vercel-plugin"],
+  ]
   "routes": [
     { "src": "/(.*)", "dest": "/index.html" }
   ]
