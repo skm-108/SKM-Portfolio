@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import About from './Components/About';
 import AIAssistant from './Components/AIAssistant';
+import BlogSection from './Components/BlogSection';
 import CommandMenu from './Components/CommandMenu';
 import ContactMe from './Components/ContactMe';
 import CursorGlow from './Components/CursorGlow';
@@ -42,6 +43,7 @@ function App() {
         <ExperienceTimeline />
         <MyProjects />
         <SkillsSection />
+        <BlogSection />
         <Resume />
         <ContactMe />
       </main>

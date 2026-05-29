@@ -52,6 +52,5 @@ app.post('/api/assistant', async (req, res) => {
 });
 
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
   console.log(`Assistant proxy listening on http://localhost:${port}`);
 });

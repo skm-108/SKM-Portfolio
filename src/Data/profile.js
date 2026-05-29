@@ -2,6 +2,12 @@ import DRDOLogo from '../assets/DRDO.png';
 import IWAILogo from '../assets/IWAI.png';
 import GDGLogo from '../assets/GDG.png';
 
+const certificateUrl = 'https://drive.google.com/file/d/1ZgL38oBI5Gj22iwp0QI0bn0Yqb0IZp4B/view?usp=sharing';
+const drdoCertificateUrl = 'https://drive.google.com/file/d/1ZgL38oBI5Gj22iwp0QI0bn0Yqb0IZp4B/view?usp=sharing';
+const iwaiCertificateUrl = 'https://drive.google.com/file/d/1yEcigXc_DVTiUjGXmqkSMA5yGYLRbPZj/view?usp=sharing';
+const aiForHumanityPostUrl = 'https://www.linkedin.com/feed/update/urn:li:activity:7314353533430968320/';
+const gdgMentorPostUrl = 'https://www.linkedin.com/posts/shivam-kumar-mishra-a68a92288_open-source-mentorship-gdg';
+
 export const profile = {
   name: 'Shivam Kumar Mishra',
   title: 'AI/ML and Cybersecurity Engineer',
@@ -13,8 +19,9 @@ export const profile = {
   github: 'https://github.com/skm-108',
   resume: '/resume.pdf',
   summary:
-    'Computer Science undergraduate at MAIT, GGSIPU with a 9.1 CGPA, focused on applied AI, retrieval systems, cybersecurity, and full-stack product engineering. I build practical AI systems across video intelligence, semantic PDF search, web retrieval, anomaly detection, and secure infrastructure.',
+    'Computer Science undergraduate at MAIT, GGSIPU with a 9.1 CGPA and GATE 2026 qualification, focused on applied AI, retrieval systems, cybersecurity, and full-stack product engineering. I build practical AI systems across video intelligence, semantic PDF search, web retrieval, anomaly detection, and secure infrastructure.',
   highlights: [
+    'GATE 2026 qualified Computer Science undergraduate with strong fundamentals across algorithms, systems, AI, and engineering mathematics.',
     'Cybersecurity and ML intern at DESIDOC, DRDO, where supervised learning pipelines reduced anomalous emails by 60% and improved spam detection accuracy by 25%.',
     'Cyber Security Analyst at Inland Waterways Authority of India, building Random Forest based anomaly detection for APT and zero-day detection workflows.',
     'Smart India Hackathon 2024 semi-finalist for KISSAN SETU, an AI-assisted farmer-to-consumer marketplace.',
@@ -55,6 +62,7 @@ export const profile = {
       role: 'Cybersecurity and Machine Learning Intern',
       period: 'January 2025 - March 2025',
       location: 'New Delhi, India',
+      certificateUrl: drdoCertificateUrl,
       highlights: [
         'Engineered a supervised learning based email anomaly detection system using feature engineering and PyTorch pipelines.',
         'Reduced anomalous emails by 60% and improved spam detection accuracy by 25%.',
@@ -64,9 +72,10 @@ export const profile = {
     {
       company: 'Inland Waterways Authority of India (MoPSW)',
       logo: IWAILogo,
-      role: 'Cyber Security Analyst',
+      role: 'Cyber Security Analyst Intern',
       period: 'September 2024 - October 2024',
       location: 'Noida, India',
+      certificateUrl: iwaiCertificateUrl,
       highlights: [
         'Architected cybersecurity infrastructure aligned with confidentiality, integrity, and availability principles.',
         'Developed a Random Forest based anomaly detection system for APTs and zero-day attack detection.',
@@ -79,8 +88,9 @@ export const profile = {
       role: 'Open Source Mentor',
       period: 'August 2024 - April 2025',
       location: 'New Delhi, India',
+      postUrl: gdgMentorPostUrl,
       highlights: [
-        'Mentored peers on open-source collaboration, technical documentation, and practical software engineering workflows.'
+        'Guided 50+ peers through contributions, code reviews, collaborative workshops, technical documentation, and practical software engineering workflows.'
       ]
     }
   ],
@@ -116,15 +126,44 @@ export const profile = {
     'Flutter', 'Node.js', 'Django', 'Git', 'Linux', 'Cybersecurity'
   ],
   certifications: [
-    'Quantum Computing Certification - CDAC Hyderabad and IIT Roorkee',
-    'Generative AI Certification - LangChain and Hugging Face',
-    'Full-Stack Web Development Certification - Industry Training Program'
+    {
+      title: 'Quantum Computing Certification',
+      issuer: 'CDAC Hyderabad and IIT Roorkee',
+      credentialUrl: certificateUrl
+    },
+    {
+      title: 'Generative AI Certification',
+      issuer: 'LangChain and Hugging Face',
+      credentialUrl: certificateUrl
+    },
+    {
+      title: 'Full-Stack Web Development Certification',
+      issuer: 'Industry Training Program',
+      credentialUrl: certificateUrl
+    }
   ],
   achievements: [
-    'AI for Humanity 2024 Finalist',
-    'Google Cloud Agentic AI Hackathon Top 700 of 9,100+ teams',
-    'Best Student Award 2021-2023',
-    'Cleared JEE Advanced 2023 and GATE 2026'
+    {
+      title: 'Google Cloud Agentic AI Hackathon',
+      detail: 'Ranked Top 700 of 9,100+ teams globally.'
+    },
+    {
+      title: 'AI for Humanity 2024 Finalist',
+      detail: 'Recognized for a high-impact AI solution.',
+      postUrl: aiForHumanityPostUrl
+    },
+    {
+      title: 'Smart India Hackathon 2024 Semi-Finalist',
+      detail: 'Selected out of 1,000+ competing teams nationwide.'
+    },
+    {
+      title: 'JEE Advanced 2023 & GATE 2026 Qualified',
+      detail: 'Cleared both highly competitive national-level examinations.'
+    },
+    {
+      title: 'Best Student Award 2021-2023',
+      detail: 'Awarded by Knowledge 360 Class for consistent academic excellence.'
+    }
   ]
 };
 

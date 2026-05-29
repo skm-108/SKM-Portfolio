@@ -45,3 +45,5 @@ lerna-debug.log*
 
 # Local-only assets (optional exports)
 portrait-resized.png
+.vercel
+.env*.local

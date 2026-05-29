@@ -8,27 +8,34 @@ const Resume = () => (
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="mx-auto flex max-w-5xl flex-col gap-5 rounded-xl border border-white/[0.08] bg-white/[0.02] p-6 md:flex-row md:items-center md:justify-between"
+      className="mx-auto grid max-w-5xl gap-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8"
     >
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.22em] accent">
-          Portfolio PDF
+          Recruiter Downloads
         </p>
-        <h2 className="mt-3 text-2xl font-semibold text-white">Download the full portfolio as PDF.</h2>
+        <h2 className="mt-3 text-2xl font-semibold text-white">
+          Resume and portfolio, ready to share.
+        </h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">
-          Multi-page export: about, skills, projects, experience, and contact — aligned with this site.
+          Download the concise resume or export the full portfolio PDF with projects, skills,
+          experience, and contact details.
         </p>
       </div>
-      <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-        <PortfolioPdfButton className="btn-accent px-6 py-3" label="Download Portfolio PDF" />
+
+      <div className="grid w-full gap-3 sm:grid-cols-2 md:w-[23rem]">
         <a
           href={profile.resume}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-ghost px-6 py-3 text-center"
+          className="btn-primary min-h-12 px-5 text-center"
         >
-          Resume PDF
+          Download Resume
         </a>
+        <PortfolioPdfButton
+          className="btn-ghost min-h-12 px-5 text-center"
+          label="Download Portfolio PDF"
+        />
       </div>
     </motion.div>
   </section>

@@ -4,6 +4,74 @@ import projects from '../Data/projects';
 import SectionHeader from './SectionHeader';
 import SectionReveal from './SectionReveal';
 
+const caseStudies = [
+  {
+    projectName: 'Clip Mind',
+    label: 'AI Video Intelligence Case Study',
+    problem:
+      'Long videos and meetings hide decisions, follow-ups, and context inside unstructured transcripts.',
+    solution:
+      'Built an ingestion pipeline for YouTube/local media, Whisper/Sarvam transcription, LLM summarization, and ChromaDB-backed transcript chat.',
+    impact:
+      'Turns long-form media into concise summaries, action items, key decisions, open questions, and searchable knowledge.',
+    stack: ['Whisper', 'Mistral API', 'Sarvam STT', 'ChromaDB', 'Streamlit', 'FFmpeg']
+  },
+  {
+    projectName: 'DocuSPARK',
+    label: 'Semantic PDF Assistant Case Study',
+    problem:
+      'PDF-heavy workflows make it slow to locate relevant evidence and ask follow-up questions across dense documents.',
+    solution:
+      'Designed a React/FastAPI RAG system with PDF extraction, chunking, embeddings, ChromaDB retrieval, and Gemini-grounded answers.',
+    impact:
+      'Creates a cleaner document Q&A workflow with source-aware retrieval and a foundation for multi-PDF research features.',
+    stack: ['React', 'TypeScript', 'FastAPI', 'LangChain', 'Gemini API', 'ChromaDB']
+  }
+];
+
+const CaseStudyCard = ({ study, index }) => (
+  <SectionReveal delay={index * 0.05}>
+    <article className="h-full rounded-xl border border-white/[0.08] bg-white/[0.02] p-5 md:p-6">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
+        {study.label}
+      </p>
+      <h3 className="mt-3 text-xl font-semibold text-white">{study.projectName}</h3>
+
+      <div className="mt-5 grid gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+            Problem
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-slate-300">{study.problem}</p>
+        </div>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+            Solution
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-slate-300">{study.solution}</p>
+        </div>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+            Impact
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-slate-300">{study.impact}</p>
+        </div>
+      </div>
+
+      <div className="mt-5 flex flex-wrap gap-1.5 border-t border-white/[0.06] pt-5">
+        {study.stack.map((item) => (
+          <span
+            key={item}
+            className="rounded-md border border-white/[0.08] px-2 py-0.5 text-xs text-slate-500"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </article>
+  </SectionReveal>
+);
+
 const ProjectDetail = ({ project, onClose }) => (
   <motion.div
     className="fixed inset-0 z-[960] flex items-end justify-center bg-slate-950/85 p-4 sm:items-center"
@@ -191,6 +259,12 @@ const MyProjects = () => {
             </div>
           </article>
         </SectionReveal>
+
+        <div className="mb-8 grid gap-5 lg:grid-cols-2">
+          {caseStudies.map((study, index) => (
+            <CaseStudyCard key={study.projectName} study={study} index={index} />
+          ))}
+        </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
           {projects.slice(1).map((project, index) => (

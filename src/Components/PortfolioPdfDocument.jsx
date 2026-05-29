@@ -192,7 +192,9 @@ const PortfolioPdfDocument = () => (
             <h3 className="pdf-h3 pdf-h3--sm">Certifications</h3>
             <ul className="pdf-list pdf-list--compact">
               {profile.certifications.map((c) => (
-                <li key={c}>{c}</li>
+                <li key={c.title || c}>
+                  {typeof c === 'string' ? c : `${c.title} - ${c.issuer}`}
+                </li>
               ))}
             </ul>
           </div>
@@ -200,7 +202,9 @@ const PortfolioPdfDocument = () => (
             <h3 className="pdf-h3 pdf-h3--sm">Signals & achievements</h3>
             <ul className="pdf-list pdf-list--compact">
               {profile.achievements.map((a) => (
-                <li key={a}>{a}</li>
+                <li key={a.title || a}>
+                  {typeof a === 'string' ? a : `${a.title} - ${a.detail}`}
+                </li>
               ))}
             </ul>
           </div>

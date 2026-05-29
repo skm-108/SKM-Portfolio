@@ -8,8 +8,8 @@ const About = () => (
     <div className="mx-auto max-w-3xl">
       <SectionHeader
         eyebrow="About"
-        title="Engineering AI systems with production discipline."
-        description="Undergraduate CS at MAIT (9.1 CGPA). I work on retrieval pipelines, applied ML, and secure architecture — with clear metrics and maintainable code."
+        title="Pre-Final Year CS undergraduate building production-minded AI systems."
+        description="MAIT CSE undergraduate with 9.1 CGPA and GATE 2026 qualification. I work on retrieval pipelines, applied ML, and secure architecture with clear metrics and maintainable code."
       />
 
       <SectionReveal>
@@ -19,8 +19,16 @@ const About = () => (
           viewport={{ once: true }}
           className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-6 md:p-8"
         >
-          <p className="text-sm text-slate-500">{profile.title}</p>
-          <p className="mt-4 text-base leading-[1.75] text-slate-300">{profile.summary}</p>
+          <div className="flex flex-wrap gap-2">
+            <span className="rounded-full border border-cyan-300/20 bg-cyan-300/[0.08] px-3 py-1 text-xs font-semibold text-cyan-100">
+              GATE 2026 Qualified
+            </span>
+            <span className="rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1 text-xs font-medium text-slate-300">
+              {profile.title}
+            </span>
+          </div>
+
+          <p className="mt-5 text-base leading-[1.75] text-slate-300">{profile.summary}</p>
 
           <div className="section-divider my-8" />
 
